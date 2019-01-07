@@ -7,8 +7,13 @@ class Demo extends Component {
   constructor() {
         super();
         this.state = {
-            multiSelect: [{'label':'Monkey','id':1,'value':true},{'label':'Donkey','id':2,'value':true},{'label':'Lion','id':3,'value':true},{'label':'Zebra','id':4,'value':true}]
+            multiSelect:[]
         };
+    }
+    componentWillMount(){
+        setTimeout(()=>{
+            this.setState({multiSelect: [{'label':'Monkey','id':1,'value':true},{'label':'Donkey','id':2,'value':true},{'label':'Lion','id':3,'value':true},{'label':'Zebra','id':4,'value':true}]});
+        },5000)
     }
     render() {
         const selectedOptionsStyles = {

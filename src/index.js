@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MultiSelectReact from 'multi-select-react'
 
@@ -10,23 +10,27 @@ const OptionsState = {
 
 //Returns of All the options or none of the options are selected.
 const isAllorNoneSelected = (options) => {
-  let allSelected = true;
-  let noneSelected = true;
-  options.forEach(option => {
-      if(option.id !=='enableAll' && option.id !=='enableNone'){
-        if(option.value === true )
-          noneSelected = false;
 
-        if(option.value === false )
-          allSelected = false;
-      }
-    });
-
-  if(allSelected) 
-    return OptionsState.ALLSELECTED;
-
-  if(noneSelected) 
-    return OptionsState.NONESELECTED;
+  if(options.length > 0) {
+    let allSelected = true;
+    let noneSelected = true;
+    options.forEach(option => {
+        if(option.id !=='enableAll' && option.id !=='enableNone'){
+          if(option.value === true )
+            noneSelected = false;
+  
+          if(option.value === false )
+            allSelected = false;
+        }
+      });
+  
+    if(allSelected) 
+      return OptionsState.ALLSELECTED;
+  
+    if(noneSelected) 
+      return OptionsState.NONESELECTED;
+  }
+  
 
   return OptionsState.DEFAULT;
 }
@@ -41,7 +45,7 @@ const MarkAllOrNoneOptions = (choice,optionList) => {
   
 }
 
-class MultiSelectReactExt extends PureComponent {
+class MultiSelectReactExt extends Component {
 
   constructor(props){
     super(props);
@@ -79,11 +83,21 @@ class MultiSelectReactExt extends PureComponent {
 
     this.props.selectedBadgeClicked(optionsList);
   }
+
+  shouldComponentUpdate = (nextProps, _) => {
+    if(nextProps.options.length > 0 && nextProps.enableSelectAllNone && nextProps.options[0].id !== 'enableAll'){
+      this.isAllNoneEnabled = false;
+    }
+    return true;
+  }
+  
   
   render() {
 
     let {options,enableSelectAllNone} = this.props;
     this.options = options;
+    console.log("options",options);
+    
     //Add Select all and Select None Options
     if(!this.isAllNoneEnabled && enableSelectAllNone){
       options = [{'label':'Select All','id':'enableAll','value':false}].concat(options.concat([{'label':'Select None','id':'enableNone','value':false}]));
