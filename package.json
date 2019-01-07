@@ -26,12 +26,12 @@
     "react": "16.x"
   },
   "devDependencies": {
+    "inferno": "^5.6.1",
     "mini-css-extract-plugin": "^0.5.0",
     "nwb": "0.23.x",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "webpack": "^4.8.3",
-    "webpack-dev-server": "^3.1.11"
+    "webpack": "^4.8.3"
   },
   "author": "Arun Shankar",
   "homepage": "https://github.com/lemorian",
