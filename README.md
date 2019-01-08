@@ -6,8 +6,8 @@
 
 Describe react-multi-select-ext here.
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/lemorian/react-multi-select-ext.svg?branch=master
+[build-badge]: https://travis-ci.org/lemorian/react-multi-select-ext.svg?branch=master
+[build]: https://travis-ci.org/lemorian/react-multi-select-ext
 
 [npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
 [npm]: https://www.npmjs.org/package/npm-package
