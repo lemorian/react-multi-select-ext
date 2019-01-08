@@ -96,7 +96,7 @@ class MultiSelectReactExt extends Component {
 
     let {options,enableSelectAllNone} = this.props;
     this.options = options;
-    console.log("options",options);
+    
     
     //Add Select all and Select None Options
     if(!this.isAllNoneEnabled && enableSelectAllNone){
