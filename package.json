@@ -20,7 +20,7 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
-    "multi-select-react": "git+https://github.com/lemorian/multi-select-react.git#master",
+    "multi-select-react": "git+https://github.com/lemorian/multi-select-react.git#v0.2",
   },
   "peerDependencies": {
     "react": "16.x"
