@@ -19,9 +19,6 @@
     "test:coverage": "nwb test-react --coverage",
     "test:watch": "nwb test-react --server"
   },
-  "dependencies": {
-    "multi-select-react": "git+https://github.com/lemorian/multi-select-react.git#v0.2",
-  },
   "peerDependencies": {
     "react": "16.x"
   },
@@ -31,7 +28,8 @@
     "nwb": "0.23.x",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "webpack": "^4.8.3"
+    "webpack": "^4.8.3",
+    "multi-select-react": "^0.1.8"
   },
   "author": "Arun Shankar",
   "homepage": "https://github.com/lemorian",
